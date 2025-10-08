@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zylpheons - Premium Men's Fashion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <nav id="navbar" class="w-full py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 gradient-blue rounded-xl neon-blue flex items-center justify-center">
+                    <span class="text-2xl font-bold">Z</span>
+                </div>
+                <span class="text-2xl font-bold gradient-blue-text">Zylpheons</span>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="hover:text-cyan-400 transition-colors duration-300">Home</a>
+                <a href="#collections" class="hover:text-cyan-400 transition-colors duration-300">Collections</a>
+                <a href="#products" class="hover:text-cyan-400 transition-colors duration-300">Products</a>
+                <a href="#about" class="hover:text-cyan-400 transition-colors duration-300">About</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button onclick="openModal('loginModal')"
+                    class="hover:text-cyan-400 transition-all duration-300 hover:scale-110">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                </button>
+                <button onclick="openModal('cartModal')"
+                    class="relative hover:text-cyan-400 transition-all duration-300 hover:scale-110">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                        </path>
+                    </svg>
+                    <span id="cartCount" class="cart-badge">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="container mx-auto text-center">
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 gradient-blue-text neon-glow">
+                Elevate Your Style
+            </h1>
+            <p class="text-xl md:text-2xl mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Premium men's fashion that combines quality craftsmanship with accessible luxury
+            </p>
+            <button onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})"
+                class="btn-primary px-10 py-4 rounded-full font-semibold text-lg relative">
+                Shop Collection
+            </button>
+        </div>
+    </section>
+    <section id="collections" class="py-24 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16 gradient-blue-text">Featured Collections</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="collection-card neon-border cursor-pointer"
+                    style="background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);">
+                    <div class="absolute inset-0 flex items-center justify-center z-10">
+                        <h3 class="text-4xl font-bold">Casual Wear</h3>
+                    </div>
+                </div>
+                <div class="collection-card neon-border cursor-pointer"
+                    style="background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 100%);">
+                    <div class="absolute inset-0 flex items-center justify-center z-10">
+                        <h3 class="text-4xl font-bold">Formal Attire</h3>
+                    </div>
+                </div>
+                <div class="collection-card neon-border cursor-pointer"
+                    style="background: linear-gradient(135deg, #164e63 0%, #0891b2 100%);">
+                    <div class="absolute inset-0 flex items-center justify-center z-10">
+                        <h3 class="text-4xl font-bold">Street Style</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="products" class="py-24 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16 gradient-blue-text">Our Products</h2>
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <button onclick="filterProducts('all')"
+                    class="filter-btn active px-6 py-3 rounded-full glass font-medium" data-filter="all">
+                    All Products
+                </button>
+                <button onclick="filterProducts('tshirt')" class="filter-btn px-6 py-3 rounded-full glass font-medium"
+                    data-filter="tshirt">
+                    T-Shirts
+                </button>
+                <button onclick="filterProducts('shirt')" class="filter-btn px-6 py-3 rounded-full glass font-medium"
+                    data-filter="shirt">
+                    Shirts
+                </button>
+                <button onclick="filterProducts('hoodie')" class="filter-btn px-6 py-3 rounded-full glass font-medium"
+                    data-filter="hoodie">
+                    Hoodies
+                </button>
+                <button onclick="filterProducts('jacket')" class="filter-btn px-6 py-3 rounded-full glass font-medium"
+                    data-filter="jacket">
+                    Jackets
+                </button>
+                <button onclick="filterProducts('pants')" class="filter-btn px-6 py-3 rounded-full glass font-medium"
+                    data-filter="pants">
+                    Pants
+                </button>
+            </div>
+            <div id="productsGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            </div>
+        </div>
+    </section>
+    <section id="about" class="pt-24 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="glass-strong rounded-3xl p-12 neon-border">
+                <h2 class="text-5xl font-bold mb-10 text-center gradient-blue-text">About Zylpheons</h2>
+                <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+                    <p>
+                        Zylpheons was born from a simple belief: premium quality fashion shouldn't be reserved for the
+                        elite. We craft exceptional men's clothing that bridges the gap between luxury and
+                        accessibility, bringing top-tier craftsmanship to the everyday gentleman.
+                    </p>
+                    <p>
+                        Every piece in our collection is thoughtfully designed and meticulously crafted using premium
+                        materials. From the initial sketch to the final stitch, we maintain rigorous quality standards
+                        that rival high-end brands, while keeping our prices fair and honest.
+                    </p>
+                    <p>
+                        We believe that looking exceptional should be effortless. That's why Zylpheons combines
+                        contemporary design with timeless style, creating versatile pieces that elevate your wardrobe
+                        and boost your confidence every single day.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="py-24 px-6">
+        <div class="container mx-auto max-w-2xl">
+            <div class="glass-strong rounded-3xl p-10 neon-border">
+                <h2 class="text-5xl font-bold text-center mb-12 gradient-blue-text">Get In Touch</h2>
+                <form id="contactForm" class="space-y-6">
+                    <div>
+                        <input type="text" placeholder="Your Name" required
+                            class="w-full px-6 py-4 rounded-xl glass border border-blue-500/30 focus:border-blue-500 transition-all duration-300">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Your Email" required
+                            class="w-full px-6 py-4 rounded-xl glass border border-blue-500/30 focus:border-blue-500 transition-all duration-300">
+                    </div>
+                    <div>
+                        <textarea placeholder="Your Message" rows="5" required
+                            class="w-full px-6 py-4 rounded-xl glass border border-blue-500/30 focus:border-blue-500 transition-all duration-300"></textarea>
+                    </div>
+                    <button type="submit" class="w-full btn-primary px-8 py-4 rounded-xl font-semibold text-lg">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="py-16 px-6 border-t border-blue-500/20">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 gradient-blue-text">Zylpheons</h3>
+                    <p class="text-gray-400 leading-relaxed">Premium men's fashion for the modern gentleman.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-cyan-400">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-cyan-400 transition-colors">Home</a></li>
+                        <li><a href="#products" class="hover:text-cyan-400 transition-colors">Products</a></li>
+                        <li><a href="#about" class="hover:text-cyan-400 transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-cyan-400">Customer Service</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Shipping Info</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Returns</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-cyan-400">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 rounded-full glass flex items-center justify-center hover-glow">
+                            <span class="text-xl">f</span>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full glass flex items-center justify-center hover-glow">
+                            <span class="text-xl">t</span>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full glass flex items-center justify-center hover-glow">
+                            <span class="text-xl">i</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-gray-400 pt-8 border-t border-blue-500/20">
+                <p>&copy; 2025 Zylpheons. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <div id="loginModal" class="modal">
+        <div class="modal-content glass-strong rounded-3xl p-10 max-w-md w-11/12 neon-border">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold gradient-blue-text" id="authTitle">Login</h2>
+                <button onclick="closeModal('loginModal')"
+                    class="text-gray-400 hover:text-cyan-400 text-4xl transition-colors">&times;</button>
+            </div>
+            <div class="flex mb-8 glass rounded-full p-1">
+                <button onclick="switchAuth('login')"
+                    class="flex-1 py-3 font-semibold rounded-full transition-all duration-300 gradient-blue"
+                    id="loginTab">Login</button>
+                <button onclick="switchAuth('signup')"
+                    class="flex-1 py-3 font-semibold rounded-full transition-all duration-300 text-gray-400"
+                    id="signupTab">Sign Up</button>
+            </div>
+            <form id="authForm" class="space-y-5">
+                <div id="nameField" style="display: none;">
+                    <input type="text" placeholder="Full Name"
+                        class="w-full px-5 py-4 rounded-xl glass border border-blue-500/30 focus:border-blue-500 transition-all">
+                </div>
+                <div>
+                    <input type="email" placeholder="Email Address"
+                        class="w-full px-5 py-4 rounded-xl glass border border-blue-500/30 focus:border-blue-500 transition-all">
+                </div>
+                <div>
+                    <input type="password" placeholder="Password"
+                        class="w-full px-5 py-4 rounded-xl glass border border-blue-500/30 focus:border-blue-500 transition-all">
+                </div>
+                <button type="submit" class="w-full btn-primary px-6 py-4 rounded-xl font-semibold text-lg">
+                    <span id="authButton">Login</span>
+                </button>
+            </form>
+        </div>
+    </div>
+    <div id="productModal" class="modal">
+        <div
+            class="modal-content glass-strong rounded-3xl p-10 max-w-4xl w-11/12 max-h-[90vh] overflow-y-auto neon-border">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold gradient-blue-text" id="productTitle"></h2>
+                <button onclick="closeModal('productModal')"
+                    class="text-gray-400 hover:text-cyan-400 text-4xl transition-colors">&times;</button>
+            </div>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="glass rounded-2xl h-96 flex items-center justify-center neon-border" id="productImageLarge">
+                    <span class="text-9xl"></span>
+                </div>
+                <div>
+                    <p class="text-4xl font-bold mb-6 gradient-blue-text" id="productPrice"></p>
+                    <p class="text-gray-300 mb-6 leading-relaxed" id="productDescription"></p>
+
+                    <div class="mb-6">
+                        <h3 class="font-semibold mb-3 text-cyan-400 text-lg">Material:</h3>
+                        <p class="text-gray-400" id="productMaterial"></p>
+                    </div>
+
+                    <div class="mb-6">
+                        <h3 class="font-semibold mb-3 text-cyan-400 text-lg">Available Sizes:</h3>
+                        <div class="flex gap-3 flex-wrap" id="productSizes"></div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="font-semibold mb-3 text-cyan-400 text-lg">Features:</h3>
+                        <ul class="list-disc list-inside text-gray-400 space-y-2" id="productFeatures"></ul>
+                    </div>
+
+                    <button onclick="addToCartFromModal()"
+                        class="w-full btn-primary px-6 py-4 rounded-xl font-semibold text-lg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cartModal" class="modal">
+        <div
+            class="modal-content glass-strong rounded-3xl p-10 max-w-2xl w-11/12 max-h-[90vh] overflow-y-auto neon-border">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold gradient-blue-text">Shopping Cart</h2>
+                <button onclick="closeModal('cartModal')"
+                    class="text-gray-400 hover:text-cyan-400 text-4xl transition-colors">&times;</button>
+            </div>
+            <div id="cartItems" class="space-y-4 mb-8">
+            </div>
+            <div class="border-t border-blue-500/30 pt-6">
+                <div class="flex justify-between items-center text-2xl font-bold mb-6">
+                    <span>Total:</span>
+                    <span class="gradient-blue-text" id="cartTotal">$0.00</span>
+                </div>
+                <button class="w-full btn-primary px-6 py-4 rounded-xl font-semibold text-lg">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/products.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
