@@ -5,6 +5,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: linear-gradient(to bottom, #0a0e27, #0f1629, #1a1f3a);
     background-attachment: fixed;
@@ -58,12 +62,6 @@ nav {
     right: 0;
     z-index: 1000;
     transition: all 0.3s ease;
-}
-
-nav.scrolled {
-    background: rgba(10, 14, 39, 0.95);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
 }
 
 .hover-lift {
@@ -271,4 +269,23 @@ textarea:focus {
     height: 2px;
     background: #22d3ee;
     box-shadow: 0 0 10px #22d3ee;
+}
+
+#navbar {
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease;
+    top: 20px;
+}
+
+#navbar .container {
+    background: rgba(15, 23, 42, 0.85);
+    border-radius: 20px;
+    padding: 12px 24px;
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.2);
+    transition: all 0.3s ease;
 }

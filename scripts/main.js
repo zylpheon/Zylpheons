@@ -1,39 +1,19 @@
-
-
-// State
 let cart = [];
 let currentProduct = null;
-
-// Initialize
 document.addEventListener('DOMContentLoaded', function () {
     displayProducts(products);
     handleNavbarScroll();
 });
-
-// Navbar Scroll Effect
-function handleNavbarScroll() {
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-}
-
-// Display Products
 function displayProducts(productsToDisplay) {
     const grid = document.getElementById('productsGrid');
     grid.innerHTML = '';
-
     productsToDisplay.forEach(product => {
         const productCard = `
                     <div class="product-card glass-strong rounded-2xl p-5 cursor-pointer hover-lift neon-border" 
                          data-category="${product.category}" 
                          onclick="openProductDetail(${product.id})">
                         <div class="glass rounded-xl h-40 flex items-center justify-center mb-4">
-                            <span class="text-6xl">${product.image}</span>
+                            <img src="${product.image}" alt="${product.name}" class="h-32 object-contain" />
                         </div>
                         <h3 class="font-semibold text-lg mb-2">${product.name}</h3>
                         <p class="text-gray-400 text-sm mb-3">${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</p>
@@ -49,13 +29,10 @@ function displayProducts(productsToDisplay) {
         grid.innerHTML += productCard;
     });
 }
-
-// Filter Products
 function filterProducts(category) {
     const buttons = document.querySelectorAll('.filter-btn');
     buttons.forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
-
     if (category === 'all') {
         displayProducts(products);
     } else {
@@ -63,19 +40,14 @@ function filterProducts(category) {
         displayProducts(filtered);
     }
 }
-
-// Open Product Detail
 function openProductDetail(productId) {
     const product = products.find(p => p.id === productId);
     currentProduct = product;
-
     document.getElementById('productTitle').textContent = product.name;
     document.getElementById('productPrice').textContent = `${product.price}`;
     document.getElementById('productDescription').textContent = product.description;
     document.getElementById('productMaterial').textContent = product.material;
-    document.getElementById('productImageLarge').innerHTML = `<span class="text-9xl">${product.image}</span>`;
-
-    // Sizes
+    document.getElementById('productImageLarge').innerHTML = `<img src="${product.image}" alt="${product.name}" class="h-72 object-contain mx-auto" />`;
     const sizesContainer = document.getElementById('productSizes');
     sizesContainer.innerHTML = '';
     product.sizes.forEach(size => {
@@ -83,46 +55,33 @@ function openProductDetail(productId) {
                     <button class="px-5 py-3 glass rounded-lg hover-glow transition-all font-medium">${size}</button>
                 `;
     });
-
-    // Features
     const featuresContainer = document.getElementById('productFeatures');
     featuresContainer.innerHTML = '';
     product.features.forEach(feature => {
         featuresContainer.innerHTML += `<li>${feature}</li>`;
     });
-
     openModal('productModal');
 }
-
-// Add to Cart from Modal
 function addToCartFromModal() {
     if (currentProduct) {
         addToCart(currentProduct.id);
         closeModal('productModal');
     }
 }
-
-// Add to Cart
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
     const existingItem = cart.find(item => item.id === productId);
-
     if (existingItem) {
         existingItem.quantity++;
     } else {
         cart.push({ ...product, quantity: 1 });
     }
-
     updateCart();
 }
-
-// Remove from Cart
 function removeFromCart(productId) {
     cart = cart.filter(item => item.id !== productId);
     updateCart();
 }
-
-// Update Quantity
 function updateQuantity(productId, change) {
     const item = cart.find(item => item.id === productId);
     if (item) {
@@ -134,32 +93,25 @@ function updateQuantity(productId, change) {
         }
     }
 }
-
-// Update Cart Display
 function updateCart() {
     const cartCount = document.getElementById('cartCount');
     const cartItems = document.getElementById('cartItems');
     const cartTotal = document.getElementById('cartTotal');
-
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
-
     if (cart.length === 0) {
         cartItems.innerHTML = '<p class="text-center text-gray-400 py-12 text-lg">Your cart is empty</p>';
         cartTotal.textContent = '$0.00';
         return;
     }
-
     cartItems.innerHTML = '';
     let total = 0;
-
     cart.forEach(item => {
         const itemTotal = item.price * item.quantity;
         total += itemTotal;
-
         cartItems.innerHTML += `
                     <div class="flex items-center gap-4 glass rounded-xl p-5 neon-border">
-                        <div class="text-5xl">${item.image}</div>
+                        <div class="text-5xl"><img src="${item.image}" alt="${item.name}" class="h-16 object-contain" /></div>
                         <div class="flex-1">
                             <h3 class="font-semibold text-lg">${item.name}</h3>
                             <p class="text-cyan-400 font-bold">${item.price}</p>
@@ -181,29 +133,22 @@ function updateCart() {
                     </div>
                 `;
     });
-
     cartTotal.textContent = `${total.toFixed(2)}`;
 }
-
-// Modal Functions
 function openModal(modalId) {
     document.getElementById(modalId).classList.add('active');
     document.body.style.overflow = 'hidden';
 }
-
 function closeModal(modalId) {
     document.getElementById(modalId).classList.remove('active');
     document.body.style.overflow = 'auto';
 }
-
-// Auth Switch
 function switchAuth(type) {
     const loginTab = document.getElementById('loginTab');
     const signupTab = document.getElementById('signupTab');
     const authTitle = document.getElementById('authTitle');
     const authButton = document.getElementById('authButton');
     const nameField = document.getElementById('nameField');
-
     if (type === 'login') {
         loginTab.classList.add('gradient-blue');
         loginTab.classList.remove('text-gray-400');
@@ -222,24 +167,35 @@ function switchAuth(type) {
         nameField.style.display = 'block';
     }
 }
-
-// Close modal when clicking outside
 window.onclick = function (event) {
     if (event.target.classList.contains('modal')) {
         event.target.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
 }
-
-// Form Submissions
 document.getElementById('authForm').addEventListener('submit', function (e) {
     e.preventDefault();
     alert('This is a demo. No data is being saved.');
     closeModal('loginModal');
 });
-
 document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
     alert('Thank you for your message! We will get back to you soon.');
     this.reset();
+});
+document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+            const navbar = document.getElementById('navbar');
+            const offset = navbar ? navbar.offsetHeight + 20 : 10;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
 });
