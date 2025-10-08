@@ -1,11 +1,26 @@
 
+
+// State
 let cart = [];
 let currentProduct = null;
 
 // Initialize
 document.addEventListener('DOMContentLoaded', function () {
     displayProducts(products);
+    handleNavbarScroll();
 });
+
+// Navbar Scroll Effect
+function handleNavbarScroll() {
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+}
 
 // Display Products
 function displayProducts(productsToDisplay) {
@@ -14,15 +29,18 @@ function displayProducts(productsToDisplay) {
 
     productsToDisplay.forEach(product => {
         const productCard = `
-                    <div class="product-card rounded-xl p-6 cursor-pointer" data-category="${product.category}" onclick="openProductDetail(${product.id})">
-                        <div class="bg-gray-800 rounded-lg h-48 flex items-center justify-center mb-4">
+                    <div class="product-card glass-strong rounded-2xl p-5 cursor-pointer hover-lift neon-border" 
+                         data-category="${product.category}" 
+                         onclick="openProductDetail(${product.id})">
+                        <div class="glass rounded-xl h-40 flex items-center justify-center mb-4">
                             <span class="text-6xl">${product.image}</span>
                         </div>
                         <h3 class="font-semibold text-lg mb-2">${product.name}</h3>
                         <p class="text-gray-400 text-sm mb-3">${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-purple-400 font-bold text-xl">$${product.price}</span>
-                            <button onclick="event.stopPropagation(); addToCart(${product.id})" class="gradient-purple px-4 py-2 rounded-lg text-sm hover:opacity-90 transition">
+                            <span class="text-cyan-400 font-bold text-xl">${product.price}</span>
+                            <button onclick="event.stopPropagation(); addToCart(${product.id})" 
+                                    class="btn-primary px-4 py-2 rounded-lg text-sm font-medium">
                                 Add to Cart
                             </button>
                         </div>
@@ -62,7 +80,7 @@ function openProductDetail(productId) {
     sizesContainer.innerHTML = '';
     product.sizes.forEach(size => {
         sizesContainer.innerHTML += `
-                    <button class="px-4 py-2 bg-gray-800 rounded-lg hover:bg-purple-600 transition">${size}</button>
+                    <button class="px-5 py-3 glass rounded-lg hover-glow transition-all font-medium">${size}</button>
                 `;
     });
 
@@ -127,7 +145,7 @@ function updateCart() {
     cartCount.textContent = totalItems;
 
     if (cart.length === 0) {
-        cartItems.innerHTML = '<p class="text-center text-gray-400 py-8">Your cart is empty</p>';
+        cartItems.innerHTML = '<p class="text-center text-gray-400 py-12 text-lg">Your cart is empty</p>';
         cartTotal.textContent = '$0.00';
         return;
     }
@@ -140,20 +158,24 @@ function updateCart() {
         total += itemTotal;
 
         cartItems.innerHTML += `
-                    <div class="flex items-center gap-4 bg-gray-800 p-4 rounded-lg">
-                        <div class="text-4xl">${item.image}</div>
+                    <div class="flex items-center gap-4 glass rounded-xl p-5 neon-border">
+                        <div class="text-5xl">${item.image}</div>
                         <div class="flex-1">
-                            <h3 class="font-semibold">${item.name}</h3>
-                            <p class="text-purple-400">${item.price}</p>
+                            <h3 class="font-semibold text-lg">${item.name}</h3>
+                            <p class="text-cyan-400 font-bold">${item.price}</p>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <button onclick="updateQuantity(${item.id}, -1)" class="w-8 h-8 bg-gray-700 rounded hover:bg-purple-600 transition">-</button>
-                            <span class="w-8 text-center">${item.quantity}</span>
-                            <button onclick="updateQuantity(${item.id}, 1)" class="w-8 h-8 bg-gray-700 rounded hover:bg-purple-600 transition">+</button>
+                        <div class="flex items-center gap-3">
+                            <button onclick="updateQuantity(${item.id}, -1)" 
+                                    class="w-10 h-10 glass rounded-lg hover-glow transition-all font-bold">-</button>
+                            <span class="w-10 text-center font-semibold">${item.quantity}</span>
+                            <button onclick="updateQuantity(${item.id}, 1)" 
+                                    class="w-10 h-10 glass rounded-lg hover-glow transition-all font-bold">+</button>
                         </div>
-                        <button onclick="removeFromCart(${item.id})" class="text-red-400 hover:text-red-300 ml-2">
+                        <button onclick="removeFromCart(${item.id})" 
+                                class="text-red-400 hover:text-red-300 ml-2 transition-colors">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                             </svg>
                         </button>
                     </div>
@@ -183,17 +205,17 @@ function switchAuth(type) {
     const nameField = document.getElementById('nameField');
 
     if (type === 'login') {
-        loginTab.classList.add('border-purple-500');
+        loginTab.classList.add('gradient-blue');
         loginTab.classList.remove('text-gray-400');
-        signupTab.classList.remove('border-purple-500');
+        signupTab.classList.remove('gradient-blue');
         signupTab.classList.add('text-gray-400');
         authTitle.textContent = 'Login';
         authButton.textContent = 'Login';
         nameField.style.display = 'none';
     } else {
-        signupTab.classList.add('border-purple-500');
+        signupTab.classList.add('gradient-blue');
         signupTab.classList.remove('text-gray-400');
-        loginTab.classList.remove('border-purple-500');
+        loginTab.classList.remove('gradient-blue');
         loginTab.classList.add('text-gray-400');
         authTitle.textContent = 'Sign Up';
         authButton.textContent = 'Sign Up';
@@ -209,9 +231,15 @@ window.onclick = function (event) {
     }
 }
 
-// Prevent form submission
+// Form Submissions
 document.getElementById('authForm').addEventListener('submit', function (e) {
     e.preventDefault();
     alert('This is a demo. No data is being saved.');
     closeModal('loginModal');
+});
+
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert('Thank you for your message! We will get back to you soon.');
+    this.reset();
 });
