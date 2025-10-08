@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zylpheons - Premium Men's Fashion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+    <div class="modal-content glass-strong rounded-3xl p-10 max-w-4xl w-11/12 max-h-[90vh] overflow-y-auto neon-border">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold gradient-blue-text" id="productTitle">Classic Black Tee</h2>
+            <button onclick="closeModal('productModal')"
+                class="text-gray-400 hover:text-cyan-400 text-4xl transition-colors">×</button>
+        </div>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="glass rounded-2xl h-96 flex items-center justify-center neon-border" id="productImageLarge"><img
+                    src="../images/Classic Black Tee.png" alt="Classic Black Tee" class="h-72 object-contain mx-auto">
+            </div>
+            <div>
+                <p class="text-4xl font-bold mb-6 gradient-blue-text" id="productPrice">29.99</p>
+                <p class="text-gray-300 mb-6 leading-relaxed" id="productDescription">A timeless essential crafted from
+                    premium cotton blend. Perfect for everyday wear with superior comfort and durability.</p>
+                <div class="mb-6">
+                    <h3 class="font-semibold mb-3 text-cyan-400 text-lg">Material:</h3>
+                    <p class="text-gray-400" id="productMaterial">100% Premium Cotton</p>
+                </div>
+                <div class="mb-6">
+                    <h3 class="font-semibold mb-3 text-cyan-400 text-lg">Available Sizes:</h3>
+                    <div class="flex gap-3 flex-wrap" id="productSizes">
+                        <button class="px-5 py-3 glass rounded-lg hover-glow transition-all font-medium">S</button>
+
+                        <button class="px-5 py-3 glass rounded-lg hover-glow transition-all font-medium">M</button>
+
+                        <button class="px-5 py-3 glass rounded-lg hover-glow transition-all font-medium">L</button>
+
+                        <button class="px-5 py-3 glass rounded-lg hover-glow transition-all font-medium">XL</button>
+
+                        <button class="px-5 py-3 glass rounded-lg hover-glow transition-all font-medium">XXL</button>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <h3 class="font-semibold mb-3 text-cyan-400 text-lg">Features:</h3>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2" id="productFeatures">
+                        <li>Breathable fabric</li>
+                        <li>Pre-shrunk</li>
+                        <li>Double-stitched seams</li>
+                        <li>Tagless comfort</li>
+                    </ul>
+                </div>
+                <button onclick="addToCartFromModal()"
+                    class="w-full btn-primary px-6 py-4 rounded-xl font-semibold text-lg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-content glass-strong rounded-3xl p-10 max-w-md w-11/12 neon-border">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold gradient-blue-text" id="authTitle">Login</h2>
+            <button onclick="closeModal('loginModal')"
+                class="text-gray-400 hover:text-cyan-400 text-4xl transition-colors">×</button>
+        </div>
+        <div class="flex mb-8 glass rounded-full p-1">
+            <button onclick="switchAuth('login')"
+                class="flex-1 py-3 font-semibold rounded-full transition-all duration-300 gradient-blue"
+                id="loginTab">Login</button>
+            <button onclick="switchAuth('signup')"
+                class="flex-1 py-3 font-semibold rounded-full transition-all duration-300 text-gray-400"
+                id="signupTab">Sign Up</button>
+        </div>
+        <form id="authForm" class="space-y-5">
+            <div id="nameField" style="display: none;">
+                <input type="text" placeholder="Full Name"
+                    class="w-full px-5 py-4 rounded-xl glass border border-blue-500/30 focus:border-blue-500 transition-all">
+            </div>
+            <div>
+                <input type="email" placeholder="Email Address"
+                    class="w-full px-5 py-4 rounded-xl glass border border-blue-500/30 focus:border-blue-500 transition-all">
+            </div>
+            <div>
+                <input type="password" placeholder="Password"
+                    class="w-full px-5 py-4 rounded-xl glass border border-blue-500/30 focus:border-blue-500 transition-all">
+            </div>
+            <button type="submit" class="w-full btn-primary px-6 py-4 rounded-xl font-semibold text-lg">
+                <span id="authButton">Login</span>
+            </button>
+        </form>
+    </div>
+    <div class="modal-content glass-strong rounded-3xl p-10 max-w-md w-11/12 neon-border">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold gradient-blue-text" id="authTitle">Sign Up</h2>
+            <button onclick="closeModal('loginModal')"
+                class="text-gray-400 hover:text-cyan-400 text-4xl transition-colors">×</button>
+        </div>
+        <div class="flex mb-8 glass rounded-full p-1">
+            <button onclick="switchAuth('login')"
+                class="flex-1 py-3 font-semibold rounded-full transition-all duration-300 text-gray-400"
+                id="loginTab">Login</button>
+            <button onclick="switchAuth('signup')"
+                class="flex-1 py-3 font-semibold rounded-full transition-all duration-300 gradient-blue"
+                id="signupTab">Sign Up</button>
+        </div>
+        <form id="authForm" class="space-y-5">
+            <div id="nameField" style="display: block;">
+                <input type="text" placeholder="Full Name"
+                    class="w-full px-5 py-4 rounded-xl glass border border-blue-500/30 focus:border-blue-500 transition-all">
+            </div>
+            <div>
+                <input type="email" placeholder="Email Address"
+                    class="w-full px-5 py-4 rounded-xl glass border border-blue-500/30 focus:border-blue-500 transition-all">
+            </div>
+            <div>
+                <input type="password" placeholder="Password"
+                    class="w-full px-5 py-4 rounded-xl glass border border-blue-500/30 focus:border-blue-500 transition-all">
+            </div>
+            <button type="submit" class="w-full btn-primary px-6 py-4 rounded-xl font-semibold text-lg">
+                <span id="authButton">Sign Up</span>
+            </button>
+        </form>
+    </div>
+    <div class="modal-content glass-strong rounded-3xl p-10 max-w-2xl w-11/12 max-h-[90vh] overflow-y-auto neon-border">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold gradient-blue-text">Shopping Cart</h2>
+            <button onclick="closeModal('cartModal')"
+                class="text-gray-400 hover:text-cyan-400 text-4xl transition-colors">×</button>
+        </div>
+        <div id="cartItems" class="space-y-4 mb-8">
+            <div class="flex items-center gap-4 glass rounded-xl p-5 neon-border">
+                <div class="text-5xl"><img src="../images/Classic Black Tee.png" alt="Classic Black Tee"
+                        class="h-16 object-contain"></div>
+                <div class="flex-1">
+                    <h3 class="font-semibold text-lg">Classic Black Tee</h3>
+                    <p class="text-cyan-400 font-bold">29.99</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="updateQuantity(1, -1)"
+                        class="w-10 h-10 glass rounded-lg hover-glow transition-all font-bold">-</button>
+                    <span class="w-10 text-center font-semibold">2</span>
+                    <button onclick="updateQuantity(1, 1)"
+                        class="w-10 h-10 glass rounded-lg hover-glow transition-all font-bold">+</button>
+                </div>
+                <button onclick="removeFromCart(1)" class="text-red-400 hover:text-red-300 ml-2 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="flex items-center gap-4 glass rounded-xl p-5 neon-border">
+                <div class="text-5xl"><img src="../images/Casual Button Shirt.png" alt="Casual Button Shirt"
+                        class="h-16 object-contain"></div>
+                <div class="flex-1">
+                    <h3 class="font-semibold text-lg">Casual Button Shirt</h3>
+                    <p class="text-cyan-400 font-bold">49.99</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="updateQuantity(2, -1)"
+                        class="w-10 h-10 glass rounded-lg hover-glow transition-all font-bold">-</button>
+                    <span class="w-10 text-center font-semibold">1</span>
+                    <button onclick="updateQuantity(2, 1)"
+                        class="w-10 h-10 glass rounded-lg hover-glow transition-all font-bold">+</button>
+                </div>
+                <button onclick="removeFromCart(2)" class="text-red-400 hover:text-red-300 ml-2 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="flex items-center gap-4 glass rounded-xl p-5 neon-border">
+                <div class="text-5xl"><img src="../images/Premium Hoodie.png" alt="Premium Hoodie"
+                        class="h-16 object-contain"></div>
+                <div class="flex-1">
+                    <h3 class="font-semibold text-lg">Premium Hoodie</h3>
+                    <p class="text-cyan-400 font-bold">69.99</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="updateQuantity(3, -1)"
+                        class="w-10 h-10 glass rounded-lg hover-glow transition-all font-bold">-</button>
+                    <span class="w-10 text-center font-semibold">1</span>
+                    <button onclick="updateQuantity(3, 1)"
+                        class="w-10 h-10 glass rounded-lg hover-glow transition-all font-bold">+</button>
+                </div>
+                <button onclick="removeFromCart(3)" class="text-red-400 hover:text-red-300 ml-2 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="border-t border-blue-500/30 pt-6">
+            <div class="flex justify-between items-center text-2xl font-bold mb-6">
+                <span>Total:</span>
+                <span class="gradient-blue-text" id="cartTotal">179.96</span>
+            </div>
+            <button class="w-full btn-primary px-6 py-4 rounded-xl font-semibold text-lg">
+                Proceed to Checkout
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
