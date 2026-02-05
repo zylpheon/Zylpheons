@@ -5,25 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="APEX MOTORS - Premium sports car dealership. Curated selection of supercars, hypercars, and classic vehicles. Explore the finest automotive excellence.">
+        content="ZYLPH - Premium sports car dealership. Curated selection of supercars, hypercars, and classic vehicles. Explore the finest automotive excellence.">
     <meta name="keywords"
         content="luxury cars, sports cars, supercars, hypercars, classic cars, premium automotive, car dealership">
-    <meta name="author" content="APEX MOTORS">
+    <meta name="author" content="ZYLPH">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="APEX MOTORS - Premium Sports Cars">
+    <meta property="og:title" content="ZYLPH - Premium Sports Cars">
     <meta property="og:description"
         content="Experience the art of speed. Curated selection of the world's most exceptional sports cars.">
     <meta property="og:image" content="./images/image1.jpeg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="APEX MOTORS - Premium Sports Cars">
+    <meta name="twitter:title" content="ZYLPH - Premium Sports Cars">
     <meta name="twitter:description"
         content="Experience the art of speed. Curated selection of the world's most exceptional sports cars.">
 
-    <title>APEX MOTORS - Premium Sports Cars</title>
+    <title>ZYLPH - Premium Sports Cars</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml"
@@ -49,12 +49,13 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="logo">
-                    <span class="text-2xl font-bold tracking-tighter">APEX</span>
+                    <span class="text-2xl font-bold tracking-tighter">ZYLPH</span>
                 </div>
 
                 <div class="hidden md:flex items-center space-x-10">
                     <a href="#home" class="nav-link">Home</a>
                     <a href="#catalog" class="nav-link">Catalog</a>
+                    <a href="#experience" class="nav-link">Experience</a>
                     <a href="#about" class="nav-link">About</a>
                     <a href="#contact" class="nav-link">Contact</a>
                 </div>
@@ -91,6 +92,7 @@
             <div class="px-6 pb-6 space-y-4 bg-white border-b border-zinc-100">
                 <a href="#home" class="block nav-link">Home</a>
                 <a href="#catalog" class="block nav-link">Catalog</a>
+                <a href="#experience" class="block nav-link">Experience</a>
                 <a href="#about" class="block nav-link">About</a>
                 <a href="#contact" class="block nav-link">Contact</a>
             </div>
@@ -145,12 +147,16 @@
     </div>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center pt-20 px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto w-full">
+    <section id="home" class="min-h-screen flex items-center pt-20 px-6 lg:px-8 relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 right-10 w-72 h-72 bg-zinc-100 rounded-full blur-3xl opacity-30 animate-float"></div>
+        <div class="absolute bottom-20 left-10 w-96 h-96 bg-zinc-50 rounded-full blur-3xl opacity-40 animate-float-delayed"></div>
+        
+        <div class="max-w-7xl mx-auto w-full relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="hero-content">
                     <div class="inline-block px-4 py-2 bg-zinc-100 rounded-full text-sm font-medium mb-6">
-                        Premium Collection 2024
+                        Premium Collection 2026
                     </div>
                     <h1 class="hero-title mb-6">
                         Experience the<br>
@@ -171,8 +177,9 @@
 
                 <div class="hero-image">
                     <div class="aspect-video bg-zinc-100 rounded-3xl overflow-hidden relative group">
-                        <img src="./images/image1.jpeg" alt="Luxury APEX MOTORS Showroom Interior"
+                        <img src="./images/image1.jpeg" alt="Luxury ZYLPH Showroom Interior"
                             class="w-full h-full object-cover" loading="eager">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                 </div>
             </div>
@@ -199,6 +206,19 @@
                     <div class="stat-number">24/7</div>
                     <div class="stat-label">Concierge Service</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Divider Section -->
+    <section class="relative h-96 overflow-hidden">
+        <div class="parallax-bg absolute inset-0 bg-cover bg-center bg-fixed" 
+             style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./images/image14.jpeg');">
+        </div>
+        <div class="relative z-10 h-full flex items-center justify-center text-center px-6">
+            <div>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Crafted for Excellence</h2>
+                <p class="text-xl text-white/90 max-w-2xl mx-auto">Every detail engineered to perfection, every journey designed to inspire</p>
             </div>
         </div>
     </section>
@@ -238,22 +258,183 @@
         </div>
     </section>
 
+    <!-- NEW: Experience Section -->
+    <section id="experience" class="py-24 px-6 lg:px-8 bg-white relative overflow-hidden">
+        <!-- Decorative Grid Pattern -->
+        <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="section-title mb-4">The ZYLPH Experience</h2>
+                <p class="text-xl text-zinc-600 max-w-2xl mx-auto">
+                    Beyond cars, we offer a lifestyle of unparalleled luxury and excitement
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Experience Card 1 -->
+                <div class="experience-card group">
+                    <div class="experience-icon">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Exclusive Test Drives</h3>
+                    <p class="text-zinc-600 leading-relaxed">
+                        Experience the thrill on our private track with professional instructors guiding your journey
+                    </p>
+                </div>
+
+                <!-- Experience Card 2 -->
+                <div class="experience-card group">
+                    <div class="experience-icon">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Concierge Delivery</h3>
+                    <p class="text-zinc-600 leading-relaxed">
+                        White-glove delivery service to your doorstep, anywhere in the world
+                    </p>
+                </div>
+
+                <!-- Experience Card 3 -->
+                <div class="experience-card group">
+                    <div class="experience-icon">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">VIP Events Access</h3>
+                    <p class="text-zinc-600 leading-relaxed">
+                        Exclusive invitations to automotive shows, racing events, and private gatherings
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Testimonials Section -->
+    <section class="py-24 px-6 lg:px-8 bg-zinc-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="section-title mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-zinc-600">Trusted by automotive enthusiasts worldwide</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="flex mb-4">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                    <p class="text-zinc-600 mb-6 leading-relaxed">
+                        "Absolutely phenomenal experience from start to finish. The team at ZYLPH made buying my dream car effortless and enjoyable."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-zinc-200 rounded-full mr-4"></div>
+                        <div>
+                            <div class="font-semibold">Michael Chen</div>
+                            <div class="text-sm text-zinc-500">Hypercar Collector</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="flex mb-4">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                    <p class="text-zinc-600 mb-6 leading-relaxed">
+                        "The level of service and attention to detail is unmatched. ZYLPH truly understands what luxury car buyers want."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-zinc-200 rounded-full mr-4"></div>
+                        <div>
+                            <div class="font-semibold">Sarah Williams</div>
+                            <div class="text-sm text-zinc-500">Entrepreneur</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="flex mb-4">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                    <p class="text-zinc-600 mb-6 leading-relaxed">
+                        "I've purchased three cars through ZYLPH. Their expertise and professionalism keep me coming back."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-zinc-200 rounded-full mr-4"></div>
+                        <div>
+                            <div class="font-semibold">David Rodriguez</div>
+                            <div class="text-sm text-zinc-500">Classic Car Enthusiast</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="py-24 px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
                     <div class="aspect-video bg-zinc-100 rounded-3xl mb-8 overflow-hidden">
-                        <img src="./images/image11.jpeg" alt="APEX MOTORS Test Drive Experience Facility"
+                        <img src="./images/image11.jpeg" alt="ZYLPH Test Drive Experience Facility"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="aspect-video bg-zinc-100 rounded-2xl overflow-hidden">
-                            <img src="./images/image12.jpeg" alt="APEX MOTORS State-of-the-Art Service Workshop"
+                            <img src="./images/image12.jpeg" alt="ZYLPH State-of-the-Art Service Workshop"
                                 class="w-full h-full object-cover" loading="lazy">
                         </div>
                         <div class="aspect-video bg-zinc-100 rounded-2xl overflow-hidden">
-                            <img src="./images/image13.jpeg" alt="APEX MOTORS Manufacturing and Detailing Facility"
+                            <img src="./images/image13.jpeg" alt="ZYLPH Manufacturing and Detailing Facility"
                                 class="w-full h-full object-cover" loading="lazy">
                         </div>
                     </div>
@@ -262,7 +443,7 @@
                 <div>
                     <h2 class="section-title mb-6">Redefining Luxury Automotive Experience</h2>
                     <p class="text-lg text-zinc-600 mb-6 leading-relaxed">
-                        For over a decade, APEX Motors has been the premier destination for automotive enthusiasts
+                        For over a decade, ZYLPH has been the premier destination for automotive enthusiasts
                         seeking the extraordinary. We don't just sell cars; we curate dreams.
                     </p>
                     <p class="text-lg text-zinc-600 mb-8 leading-relaxed">
@@ -382,7 +563,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-12 mb-12">
                 <div>
-                    <div class="text-2xl font-bold mb-4">APEX</div>
+                    <div class="text-2xl font-bold mb-4">ZYLPH</div>
                     <p class="text-zinc-400 leading-relaxed">
                         Premium sports car dealership dedicated to automotive excellence.
                     </p>
@@ -392,6 +573,7 @@
                     <h4 class="font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
                         <li><a href="#catalog" class="text-zinc-400 hover:text-white transition-colors">Catalog</a></li>
+                        <li><a href="#experience" class="text-zinc-400 hover:text-white transition-colors">Experience</a></li>
                         <li><a href="#about" class="text-zinc-400 hover:text-white transition-colors">About Us</a></li>
                         <li><a href="#contact" class="text-zinc-400 hover:text-white transition-colors">Contact</a></li>
                     </ul>
@@ -421,7 +603,7 @@
 
             <div class="border-t border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-zinc-400 text-sm mb-4 md:mb-0">
-                    © 2024 APEX Motors. All rights reserved.
+                    © 2026 ZYLPH. All rights reserved.
                 </p>
                 <div class="flex gap-6">
                     <a href="#" class="text-zinc-400 hover:text-white transition-colors">Privacy Policy</a>
@@ -452,7 +634,7 @@
             <div
                 style="width: 50px; height: 50px; border: 3px solid #f3f3f3; border-top: 3px solid #18181b; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem;">
             </div>
-            <p style="color: #71717a; font-size: 14px;">Loading APEX MOTORS...</p>
+            <p style="color: #71717a; font-size: 14px;">Loading ZYLPH...</p>
         </div>
     </div>
 
@@ -472,7 +654,7 @@
     <noscript>
         <div
             style="position: fixed; top: 0; left: 0; width: 100%; background: #18181b; color: white; padding: 1rem; text-align: center; z-index: 10000;">
-            Please enable JavaScript for the best experience on APEX MOTORS.
+            Please enable JavaScript for the best experience on ZYLPH.
         </div>
     </noscript>
 

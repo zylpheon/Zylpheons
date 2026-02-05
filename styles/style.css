@@ -1,5 +1,5 @@
 /* ===================================
-   APEX MOTORS - Stylesheet
+   ZYLPH - Stylesheet
    Monochrome Professional Theme
    =================================== */
 
@@ -170,6 +170,33 @@ body {
     }
 }
 
+/* NEW: Floating Animation for Decorative Elements */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes float-delayed {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    50% {
+        transform: translateY(-15px) translateX(10px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float-delayed 8s ease-in-out infinite;
+}
+
 /* Stats */
 .stat-item {
     text-align: center;
@@ -197,6 +224,68 @@ body {
     to {
         opacity: 1;
     }
+}
+
+/* NEW: Parallax Background */
+.parallax-bg {
+    transition: transform 0.1s ease-out;
+}
+
+/* NEW: Grid Pattern Background */
+.bg-grid-pattern {
+    background-image: 
+        linear-gradient(to right, #e4e4e7 1px, transparent 1px),
+        linear-gradient(to bottom, #e4e4e7 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* NEW: Experience Cards */
+.experience-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    border: 1px solid var(--color-border);
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.experience-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary);
+}
+
+.experience-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: var(--transition-smooth);
+}
+
+.experience-card:hover .experience-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: var(--color-accent);
+}
+
+/* NEW: Testimonial Cards */
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    border: 1px solid var(--color-border);
+    transition: var(--transition-smooth);
+    height: 100%;
+}
+
+.testimonial-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
 }
 
 /* Filters */

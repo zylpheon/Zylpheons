@@ -1,5 +1,5 @@
 // ===================================
-// APEX MOTORS - JavaScript
+// ZYLPH - JavaScript
 // E-Commerce Functionality
 // ===================================
 
@@ -7,10 +7,10 @@
 const products = [
     {
         id: 1,
-        name: "Apex GT-R Evolution",
+        name: "Zylph GT-R Evolution",
         category: "supercar",
         price: 189000,
-        year: 2024,
+        year: 2026,
         horsepower: 650,
         torque: "590 lb-ft",
         acceleration: "2.9s",
@@ -24,7 +24,7 @@ const products = [
         name: "Carbon Fiber RS",
         category: "hypercar",
         price: 625000,
-        year: 2024,
+        year: 2026,
         horsepower: 890,
         torque: "664 lb-ft",
         acceleration: "2.3s",
@@ -38,7 +38,7 @@ const products = [
         name: "Veloce Grand Tourer",
         category: "gt",
         price: 245000,
-        year: 2023,
+        year: 2026,
         horsepower: 580,
         torque: "510 lb-ft",
         acceleration: "3.5s",
@@ -66,7 +66,7 @@ const products = [
         name: "Titan Track Edition",
         category: "supercar",
         price: 298000,
-        year: 2024,
+        year: 2026,
         horsepower: 720,
         torque: "620 lb-ft",
         acceleration: "2.7s",
@@ -80,7 +80,7 @@ const products = [
         name: "Phantom Ultra Hyper",
         category: "hypercar",
         price: 1200000,
-        year: 2024,
+        year: 2026,
         horsepower: 1500,
         torque: "1180 lb-ft",
         acceleration: "1.9s",
@@ -94,7 +94,7 @@ const products = [
         name: "Continental GT Sport",
         category: "gt",
         price: 175000,
-        year: 2023,
+        year: 2026,
         horsepower: 500,
         torque: "450 lb-ft",
         acceleration: "3.8s",
@@ -119,10 +119,10 @@ const products = [
     },
     {
         id: 9,
-        name: "Apex S Performance",
+        name: "Zylph S Performance",
         category: "supercar",
         price: 156000,
-        year: 2024,
+        year: 2026,
         horsepower: 580,
         torque: "540 lb-ft",
         acceleration: "3.2s",
@@ -383,11 +383,11 @@ function updateCart() {
 }
 
 function saveCartToStorage() {
-    localStorage.setItem('apexCart', JSON.stringify(cart));
+    localStorage.setItem('zylphCart', JSON.stringify(cart));
 }
 
 function loadCartFromStorage() {
-    const savedCart = localStorage.getItem('apexCart');
+    const savedCart = localStorage.getItem('zylphCart');
     if (savedCart) {
         cart = JSON.parse(savedCart);
         updateCart();
